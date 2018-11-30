@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    {% if current_user.username %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    {% else %}
+    <h1>About Page</h1>
+    {% endif %}
+    <p>This Program is developed by Chris, for you have any questions, please email to chris.wong@xyzq.com.hk.</p>
+{% endblock %}

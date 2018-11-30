@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    {% if current_user.username %}
+    <h1>Hi {{ current_user.username }}!</h1>
+    Welcome to the Main Page
+    {% else %}
+    <h1>Welcome to the Main Page</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,68 @@
+1. pip install flask    - flask framework
+2. pip install flask-wtf    - Web form
+3. pip install flask-sqlalchemy - ORM(object relational mapper), for MySQL;PostgreSQL;SQLite
+    use "snake case" naming method
+        User -> user
+        AddressAndPhone -> address_and_phone
+4. pip install flask-migrate    - update database
+    flask db init       - init db...create migration folder
+    flask db migrate    - NO change to DB, just generate migration script
+    flask db upgrade    - apply change to DB..db "app.db" is created
+5. from werkzeug.security import generate_password_hash, check_password_hash
+6. pip install flask-login
+
+
+
+
+Visual Studio Installer   UserMixin -
+        is_authenticated: a property that is True if the user has valid credentials or False otherwise.
+        is_active: a property that is True if the user's account is active or False otherwise.
+        is_anonymous: a property that is False for regular users, and True for a special, anonymous user.
+        get_id(): a method that returns a unique identifier for the user as a string (unicode, if using Python 2).
+    User Loader Function -
+        Flask-Login keeps track of the logged in user by storing its unique identifier in Flask's user session, a storage space assigned to each user who connects to the application. Each time the logged-in user navigates to a new page, Flask-Login retrieves the ID of the user from the session, and then loads that user into memory.
+7. pip install flask-bootstrap
+8. Task Queue - Celery...most popular
+              - Redis Queue(RQ)...lest flexibility, but Much Simpler
+
+              RQ - pip install rq
+                 - pip freeze > requirements.txt
+              Celery: Celery client -  issue background job work with Flask app
+                      Celery workers - process that run background job
+                      Message broker - message queue(RabbitMQ, Redis)
+
+9.  Deployment  - Copy Apache to C:/Apache24
+                - pip install mod_wsgi
+                - run mod_wsgi-express module-config
+                - Copy mod_wsgi-xxx.pyd into C:/Apache24/modules
+                - C:/Apache24/conf/httpd.conf add LoadModule wsgi_module modules/mod_wsgi.pyd
+                - add test.wsgi - connect to manage.py file:
+                    import sys
+                    sys.path.insert(0, "C:/Links")
+                    from links import app
+                    application = app
+                - C:/Apache24/conf/httpd.conf Add:
+                    <VirtualHost *:80 >
+                    ServerAdmin example@company.com
+                    DocumentRoot c:\Links
+                    <Directory "c:\Links">
+                    Require all granted
+                    Require host ip
+                    Allow from all
+                    </Directory>
+                    WSGIScriptAlias / c:\Links\test.wsgi
+                    </VirtualHost>
+                - Run C:\Apache24\bin\httpd.exe
+
+
+
+
+
+
+
+
+
+
+
+
+

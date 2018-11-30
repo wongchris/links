@@ -1,0 +1,1591 @@
+2018-11-28 11:45:10,028 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:29,614 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:29,946 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:30,214 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:30,469 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:30,775 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:31,082 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:31,379 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:44,648 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:45,089 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:45,502 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:46,228 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:46,593 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:46,896 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:47,196 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:47,481 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:47,765 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:48,031 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:48,282 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:48,540 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:48,794 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:49,017 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:49,278 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:49,515 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:49,736 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:49,983 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:54,053 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:54,424 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:54,789 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:55,045 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:55,298 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:55,514 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:55,715 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:55,887 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:56,066 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:45:56,254 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:46:15,947 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:46:38,852 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2018-11-28 11:46:39,436 ERROR: Exception on / [GET] [in d:\python\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "d:\python\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\python\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\python\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm3\Links\app\routes.py", line 11, in index
+  File "d:\python\lib\site-packages\flask\templating.py", line 135, in render_template
+    context, ctx.app)
+  File "d:\python\lib\site-packages\flask\templating.py", line 117, in _render
+    rv = template.render(context)
+  File "d:\python\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\python\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PyCharm3\Links\app\templates\index.html", line 1, in top-level template code
+    <html>
+  File "D:\PyCharm3\Links\app\templates\base.html", line 14, in top-level template code
+  File "d:\python\lib\site-packages\flask\helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\python\lib\site-packages\flask\app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\python\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "d:\python\lib\site-packages\flask\helpers.py", line 345, in url_for
+    force_external=external)
+  File "d:\python\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
