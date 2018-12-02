@@ -53,7 +53,7 @@ Visual Studio Installer   UserMixin -
                     WSGIScriptAlias / c:\Links\test.wsgi
                     </VirtualHost>
                 - Run C:\Apache24\bin\httpd.exe
-
+10. Try Git
 
 
 
