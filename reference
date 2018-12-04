@@ -31,29 +31,45 @@ Visual Studio Installer   UserMixin -
                       Celery workers - process that run background job
                       Message broker - message queue(RabbitMQ, Redis)
 
-9.  Deployment  - Copy Apache to C:/Apache24
-                - pip install mod_wsgi
-                - run mod_wsgi-express module-config
-                - Copy mod_wsgi-xxx.pyd into C:/Apache24/modules
-                - C:/Apache24/conf/httpd.conf add LoadModule wsgi_module modules/mod_wsgi.pyd
-                - add test.wsgi - connect to manage.py file:
-                    import sys
-                    sys.path.insert(0, "C:/Links")
-                    from links import app
-                    application = app
-                - C:/Apache24/conf/httpd.conf Add:
-                    <VirtualHost *:80 >
-                    ServerAdmin example@company.com
-                    DocumentRoot c:\Links
-                    <Directory "c:\Links">
-                    Require all granted
-                    Require host ip
-                    Allow from all
-                    </Directory>
-                    WSGIScriptAlias / c:\Links\test.wsgi
-                    </VirtualHost>
-                - Run C:\Apache24\bin\httpd.exe
-10. Try Git
+9.  Deployment  ~~~Windows Deployment
+                    - Copy Apache to C:/Apache24
+                    - pip install mod_wsgi
+                    - run mod_wsgi-express module-config
+                    - Copy mod_wsgi-xxx.pyd into C:/Apache24/modules
+                    - C:/Apache24/conf/httpd.conf add LoadModule wsgi_module modules/mod_wsgi.pyd
+                    - add test.wsgi - connect to manage.py file:
+                        import sys
+                        sys.path.insert(0, "C:/Links")
+                        from links import app
+                        application = app
+                    - C:/Apache24/conf/httpd.conf Add:
+                        <VirtualHost *:80 >
+                        ServerAdmin example@company.com
+                        DocumentRoot c:\Links
+                        <Directory "c:\Links">
+                        Require all granted
+                        Require host ip
+                        Allow from all
+                        </Directory>
+                        WSGIScriptAlias / c:\Links\test.wsgi
+                        </VirtualHost>
+                    - Run C:\Apache24\bin\httpd.exe
+                ~~~Docker Deployment
+
+10.offline pip install - pip download -r requirements.txt -d "~/some_directory"
+
+11. Offline Server Deployment - Init Step
+                                - Clone C:\Apache24\
+                                - Install C++ build tools
+                                - create test.wsgi & Links folder
+                                - Bootstrap Handling(disable CDN Files)
+                              - Deploy Steps
+                                - pip freeze > requirements.txt
+                                - pip download -r requirements.txt -d "~/some_directory"
+                                - clone new libraries and requirements.txt to deploy server/pakckages folder
+                                - pip install -r requirements.txt --no-index --find-links D:\packages\
+                                - update Links files
+
 
 
 

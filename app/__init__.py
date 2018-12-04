@@ -15,6 +15,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 bootstrap = Bootstrap(app)
 
+app.config['BOOTSTRAP_SERVE_LOCAL'] = True
 
 #Force user go to login page
 #login.login_view = 'login'
