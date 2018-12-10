@@ -5,15 +5,14 @@
 {% endblock %}
 
 {% block styles %}
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 {% endblock %}
 
 {% block scripts %}
     <script src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}" ></script>
     <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
-
 {% endblock %}
 
 {% block navbar %}
@@ -31,25 +30,37 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
+                    {% if current_user.department in ["admin"] %}
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                        <a href="{{ url_for('admin') }}" class="dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true"
-                        aria-expanded="false">General<span class="caret"></span></a>
+                        aria-expanded="false">Admin<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Background Job</a></li>
-                            <li><a href="#">DB Register</a></li>
+                            <li><a href="{{ url_for('user_management') }}">User Management</a></li>
+                            <li><a href="{{ url_for('db_management') }}">DB Management</a></li>
                         </ul>
                     </li>
-
+                    {% endif %}
+                    {% if current_user.department in ["admin","app"] %}
                     <li>
                         <a href="{{ url_for('app_team') }}" class="dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true"
                         aria-expanded="false">App<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('email_template') }}">Email</a></li>
-                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                            <li><a href="{{ url_for('batch_send_email') }}">Batch Send Email</a></li>
                         </ul>
                     </li>
+                    {% endif %}
+                    {% if current_user.department in ["admin","operations"] %}
+                    <li>
+                        <a href="{{ url_for('operations') }}" class="dropdown-toggle" data-toggle="dropdown"
+                        role="button" aria-haspopup="true"
+                        aria-expanded="false">Operations<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Operations</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -63,8 +74,6 @@
             </div>
         </div>
     </nav>
-
-
 {% endblock %}
 
 {% block content %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+    <table>
+        <tr valign="top">
+            <td><h1>Admin User: {{ current_user.username }}</h1></td>
+        </tr>
+    </table>
+    <hr>
+
+    <div class="table-title">
+
+    </div>
+    <table  class="table">
+        <thead class="thead-light">
+          <tr>
+            <th><p>Host</p></th>
+            <th><p>DB Name</p></th>
+            <th><p>Remark</p></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for each_db in dbs %}
+          <tr>
+            <td><h5>{{ each_db.host }}</h5></td>
+            <td><h5>{{ each_db.db_name }}</h5></td>
+              <td><h5>{{ each_db.remark }}</h5></td>
+            <td>
+                <a data-id="{{ each_db.id }}" onclick="Edit(this)">
+                    <button type="button"  class="btn btn-warning">
+                        <span>Test Connect</span>
+                    </button>
+                </a>
+                <a data-id="{{ each_db.id }}" onclick="Delete(this)">
+                    <button type="button"  class="btn btn-danger">
+                        <span>delete</span>
+                    </button>
+                </a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-8"><a href="{{ url_for('register_db') }}">
+            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>New Database ? Click here to Register</button>
+        </a></div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="editModalLabel">Test DB Connection Result</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label class="control-label"  id="testResult"></label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function Edit(elm) {
+            $.ajax({
+                url: '{{ url_for('test_db') }}',
+                data: {
+                    dbid: $(elm).attr('data-id')
+                },
+                type: 'POST',
+                success: function(res) {
+                    console.log(res);
+                    var data = JSON.parse(res);
+                    $('#testResult').text(data[0]['result']);
+                    $('#editModal').modal();
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function Delete(elm) {
+            $.ajax({
+                url: '{{ url_for('delete_db') }}',
+                data: {
+                    dbid: $(elm).attr('data-id')
+                },
+                type: 'POST',
+                success: function(res) {
+                    console.log(res);
+                    location.reload();
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+
+    </script>
+
+{% endblock %}

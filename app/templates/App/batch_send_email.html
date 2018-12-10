@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>Batch Send Email</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.bcc.label }}<br>
+            {{ form.bcc(size=64) }}<br>
+            {% for error in form.bcc.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.sender.label }}<br>
+            {{ form.sender(size=64) }}<br>
+            {% for error in form.sender.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.sender_name.label }}<br>
+            {{ form.sender_name(size=64) }}<br>
+            {% for error in form.sender_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.subject.label }}<br>
+            {{ form.subject(size=64) }}<br>
+            {% for error in form.subject.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.attach.label }}<br>
+            {{ form.attach(size=64) }}<br>
+            {% for error in form.attach.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.pause_per_email.label }}<br>
+            {{ form.pause_per_email(size=64) }}<br>
+            {% for error in form.pause_per_email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.no_of_batch.label }}<br>
+            {{ form.no_of_batch(size=64) }}<br>
+            {% for error in form.no_of_batch.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.hibernate_time.label }}<br>
+            {{ form.hibernate_time(size=64) }}<br>
+            {% for error in form.hibernate_time.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.recipient.label }}<br>
+            {{ form.recipient(size=64) }}<br>
+            {% for error in form.recipient.errors %}
+            {% endfor %}
+            <span style="color: red;">[{{ error }}]</span>
+        </p>
+        <p>
+            {{ form.html_body.label }}<br>
+            {{ form.html_body(cols="64", rows="20") }}<br>
+            {% for error in form.html_body.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

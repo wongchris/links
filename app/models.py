@@ -3,6 +3,7 @@ from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
+from app.Utils.password import Password
 
 
 class User(UserMixin, db.Model):
@@ -26,3 +27,21 @@ class User(UserMixin, db.Model):
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+class Database(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    driver = db.Column(db.String(30))
+    host = db.Column(db.String(30))
+    db_name = db.Column(db.String(30))
+    login = db.Column(db.String(30))
+    password = db.Column(db.String(30))
+    remark = db.Column(db.String(100))
+
+    def __repr__(self):
+        return '<DB {}>'.format(self.remark)
+
+    def set_password(self, password):
+        self.password = Password.encode(password)
+
+    def get_password(self):
+        return Password.decode(self.password)

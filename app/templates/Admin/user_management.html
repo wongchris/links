@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+    <table>
+        <tr valign="top">
+            <td><h1>Admin User: {{ current_user.username }}</h1></td>
+        </tr>
+    </table>
+    <hr>
+
+    <div class="table-title">
+
+    </div>
+    <table  class="table">
+        <thead class="thead-light">
+          <tr>
+            <th><p>User</p></th>
+            <th><p>Deparment</p></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+          <tr>
+            <td><h5>{{ user.username }}</h5></td>
+            <td><h5>{{ user.department }}</h5></td>
+            <td>
+                    <a data-id="{{ user.id }}" data-username="{{ user.username }}" data-department="{{ user.department }}" onclick="Edit(this)" >
+                        <button type="button"  class="btn btn-warning">
+                            <span>update</span>
+                        </button>
+                    </a>
+                    <a data-id="{{ user.id }}" onclick="Delete(this)" >
+                        <button type="button"  class="btn btn-danger">
+                            <span>delete</span>
+                        </button>
+                    </a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-sm-8"><a href="{{ url_for('register') }}">
+            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>New User ? Click here to Register</button>
+        </a></div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="editModalLabel">Update User</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label class="control-label">User ID:</label>
+                <input readonly type="text" class="form-control" id="editUserId">
+              </div>
+              <div class="form-group">
+                <label class="control-label">User Name:</label>
+                <input type="text" class="form-control" id="editUserName">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Department</label>
+                <select class="form-control" id="editDepartment">
+                    <option value="admin">admin</option>
+                    <option value="app">app</option>
+                    <option value="operations">operations</option>
+                    <option value="guest">guest</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Password:</label>
+                <input type="password" class="form-control" id="editUserPassword">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="btnUpdate" onclick="Update()"  type="button" class="btn btn-warning">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="confirmModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" style="background-color: #fff" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                Are you sure?
+                </div>
+                <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="ok" onclick="Ok_To_Delete()">Delete</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        IdDelete = 0;
+
+        function Edit(elm) {
+            $.ajax({
+                url: '{{ url_for('edit_user') }}',
+                data: {
+                    username: $(elm).attr('data-username'), department: $(elm).attr('data-department'), userid: $(elm).attr('data-id')
+                },
+                type: 'POST',
+                success: function(res) {
+                    console.log(res);
+                    var data = JSON.parse(res);
+
+                    $('#editUserName').val(data[0]['username']);
+                    $('#editDepartment').val(data[0]['department']);
+                    $('#editUserId').val(data[0]['userid']);
+                    $('#editUserPassword').val('');
+
+                    // Trigger the Pop Up
+                    $('#editModal').modal();
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function Delete(elm) {
+            $.ajax({
+                url: '{{ url_for('delete_user') }}',
+                data: {
+                    userid: $(elm).attr('data-id')
+                },
+                type: 'POST',
+                success: function(res) {
+                    console.log(res);
+                    location.reload();
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function Ok_To_Delete() {
+            if (IdDelete > 0) {
+                $.ajax({
+                    url: '{{ url_for('admin') }}',
+                    data: {
+                        update_user_id:$('#editUserName').val()
+                    },
+                    type: 'POST',
+                    success: function(res) {
+                        console.log(res);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+            console.log(IdDelete);
+            $('#confirmModal').modal("Hide")
+            IdDelete = 0;
+        }
+
+
+        function Update(){
+            $.ajax({
+                url: '{{ url_for('edit_user_update') }}',
+                data : { update_user:$('#editUserName').val(),update_department:$('#editDepartment').val(),update_user_id:$('#editUserId').val(),update_user_password:$('#editUserPassword').val()},
+                type : 'POST',
+                success: function(res){
+                    $('#editModal').modal('hide');
+                    ReturnToUserManagement()
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+         }
+
+        function ReturnToUserManagement(){
+            $.ajax({
+              url : '{{ url_for('user_management') }}',
+              type : 'GET',
+              success: function(res){
+                console.log(res);
+                location.reload();
+              },
+              error: function(error){
+                console.log(error);
+              }
+            });
+        }
+
+    </script>
+
+{% endblock %}
