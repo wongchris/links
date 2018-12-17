@@ -3,9 +3,12 @@ alembic==1.0.3
 altgraph==0.16.1
 aniso8601==4.0.1
 astor==0.7.1
+blinker==1.4
 bottle==0.12.13
 bottle-websocket==0.2.9
+certifi==2018.11.29
 cffi==1.11.5
+chardet==3.0.4
 Click==7.0
 dominate==2.3.5
 Eel==0.9.10
@@ -14,6 +17,7 @@ Flask==1.0.2
 Flask-Bootstrap==3.3.7.1
 Flask-Jsonpify==1.5.0
 Flask-Login==0.4.1
+Flask-Mail==0.9.1
 Flask-Migrate==2.3.0
 Flask-RESTful==0.3.6
 Flask-SQLAlchemy==2.3.2
@@ -25,6 +29,7 @@ gevent-websocket==0.10.1
 greenlet==0.4.15
 grpcio==1.16.0
 h5py==2.8.0
+idna==2.8
 itsdangerous==1.1.0
 jdcal==1.4
 Jinja2==2.10
@@ -43,6 +48,7 @@ pefile==2018.8.8
 protobuf==3.6.1
 pycparser==2.19
 PyInstaller==3.4
+PyJWT==1.7.0
 pyodbc==4.0.24
 pypiwin32==223
 python-dateutil==2.7.4
@@ -52,6 +58,8 @@ pywin32==224
 pywin32-ctypes==0.2.0
 PyYAML==3.13
 redis==3.0.1
+requests==2.21.0
+requests-toolbelt==0.8.0
 rq==0.12.0
 scipy==1.1.0
 six==1.11.0
@@ -59,6 +67,7 @@ SQLAlchemy==1.2.14
 tensorboard==1.11.0
 tensorflow==1.11.0
 termcolor==1.1.0
+urllib3==1.24.1
 virtualenv==16.0.0
 visitor==0.1.3
 Werkzeug==0.14.1
@@ -66,3 +75,4 @@ whichcraft==0.5.2
 WMI==1.4.9
 WTForms==2.2.1
 xlrd==1.1.0
+XlsxWriter==1.1.2

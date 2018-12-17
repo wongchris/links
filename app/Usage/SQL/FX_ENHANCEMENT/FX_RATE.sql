@@ -1,0 +1,1 @@
+select * from mst_fx_rate where chk_status = 'A'

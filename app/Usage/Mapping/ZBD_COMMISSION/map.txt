@@ -1,0 +1,25 @@
+{
+	"file_name": "香港佣金报送表",
+	
+	"account_name2_main": "中文名称",
+	"account_name_main": "英文名称",
+	"country_name": "机构来源地",
+	
+	"MONTH_CNY": "当月沪港通（RMB）",
+	"MONTH_HKD": "当月港股（HKD）",
+	"MONTH_USD": "当月美股（USD）",
+	"YEAR_HKD": "当年累计沪港通（RMB）",
+	"YEAR_CNY": "当年累计港股（HKD）",
+	"YEAR_USD": "当年累计美股（USD）",
+	
+	"CAYMAN ISLANDS" : "开曼群島",
+	"CHINA" : "中国",
+	"HONG KONG" : "香港",
+	"KOREA, REPUBLIC OF" : "韩国",
+	"SINGAPORE" : "新加坡",
+	"TAIWAN, PROVINCE OF CHINA" : "台湾",
+	"UNITED STATES" : "美国",
+	"VIRGIN ISLANDS, BRITISH" : "英国"	
+	
+	
+}

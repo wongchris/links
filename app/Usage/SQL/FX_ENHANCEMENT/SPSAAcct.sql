@@ -1,0 +1,1 @@
+select distinct account_no from mst_account_exchange where si_broker_id <> ''

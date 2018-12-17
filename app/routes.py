@@ -1,12 +1,19 @@
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditUserForm, deptList, DBRegistrationForm, BatchSendEmailForm
-from flask import render_template, flash, redirect, url_for, request
+from app.forms import LoginForm, RegistrationForm, EditUserForm, deptList, DBRegistrationForm, BatchSendEmailForm,FxEnhancementForm
+from app.models import User, Database
+from app.email import send_email
+from app.Functions.fx_enhancement import FxEnhancement
+from flask import render_template, flash, redirect, url_for, request,send_file, Response
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
-from app.models import User, Database
 import pyodbc
 import json
-from app.email import send_email
+import pandas as pd
+from io import BytesIO
+import subprocess
+from app.Utils.sys_dir import SystemPath
+import os
+
 
 #  region main
 @app.route('/')
@@ -210,6 +217,32 @@ def batch_send_email():
 @app.route('/operations')
 def operations():
     return render_template("Operations/operations.html", title='Operation Page')
+
+@app.route('/fx_enhancement', methods=['GET', 'POST'])
+@login_required
+def fx_enhancement():
+    if current_user.is_anonymous or current_user.department not in ['admin','operations']:
+        return redirect(url_for('index'))
+    form = FxEnhancementForm()
+    print(form.fx_file.data)
+    if form.validate_on_submit():
+        if form.open_folder.data:
+            p = subprocess.Popen([os.path.join(SystemPath.TOOL_DIR, "open_folder.bat"), form.export_path.data],
+                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output, errors = p.communicate()
+            p.wait()
+            return redirect(url_for('fx_enhancement'))
+        elif form.submit.data:
+            if not form.fx_file.data:
+                flash(message="No FX Rate File Imported!", category='error')
+                return redirect(url_for('fx_enhancement'))
+            fx_enhancement = FxEnhancement(database=form.database.data, fx_file=form.fx_file.data, export_path=form.export_path.data)
+
+            fx_enhancement.export_file()
+            return redirect(url_for('fx_enhancement'))
+           # return redirect(url_for('fx_enhancement'))
+
+    return render_template("Operations/fx_enhancement.html", title='FX Enhancement', form=form)
 
 
 #  endregion

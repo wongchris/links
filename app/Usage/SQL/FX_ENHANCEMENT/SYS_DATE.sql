@@ -1,0 +1,1 @@
+select sys_date from sys_system

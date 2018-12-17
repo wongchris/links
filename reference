@@ -65,13 +65,18 @@ Visual Studio Installer   UserMixin -
                                 - Bootstrap Handling(disable CDN Files)
                               - Deploy Steps
                                 - pip freeze > requirements.txt
-                                - pip download -r requirements.txt -d "~/some_directory"
+                                - pip download -r requirements.txt -d "D:/Pycharm3/Links/packages/second"
                                 - clone new libraries and requirements.txt to deploy server/pakckages folder
-                                - pip install -r requirements.txt --no-index --find-links D:\packages\
+                                - pip install -r requirements.txt --no-index --find-links D:\Chris\packages
                                 - update Links files
 
 
-
+----------------------------------------------------------------------------------
+12. Flask-Mail  -   pip install flask-mail(email extension)
+                -   pip install pyjwt(json web tokens)
+13. xlsxwriter  -   pip install xlsxwriter
+                    (pip download -r temprequirement -d "D:/PyCharm3/Links/packages/second")
+14. requests-toolbelt - pip install requests-toolbelt
 
 
 

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block app_content %}
+    <h1>FX Enhancement</h1>
+    {{ wtf.quick_form(form) }}
+
+{% endblock %}

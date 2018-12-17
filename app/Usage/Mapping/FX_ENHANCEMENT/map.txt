@@ -1,0 +1,8 @@
+{
+	"file_name": "Securities Fund TR",
+	"TranType": "0025",
+	"RemarkPrefix": "貨幣兌換 @ ",
+	"bankAcctCode": "",
+	"CashType": "C",
+	"BatchId": ""
+}
