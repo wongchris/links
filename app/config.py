@@ -7,7 +7,7 @@ class Config(object):
                               'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False  # to signal the application every time a change is about to be made in the database.
 
-    #Email
+    #flask_mail usage
     MAIL_SERVER = "192.168.220.32"
     MAIL_PORT = int(25)
     MAIL_USE_TLS = 0
@@ -15,10 +15,10 @@ class Config(object):
     MAIL_PASSWORD = "SEN123asd"
     ADMINS = ['chris.wong@xyzq.com.hk']
 
+    #flask_bootstrap usage
     BOOTSTRAP_SERVE_LOCAL = True
 
-
-    #System
-
-
-    #admin
+    #flask_uploads usage
+    UPLOADED_FILES_DEST = ''
+    #UPLOADS_DEFAULT_DEST = ''
+    #UPLOADED_PHOTOS_DEST  = ''

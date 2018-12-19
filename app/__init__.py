@@ -12,6 +12,7 @@ from flask_mail import Mail
 
 
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
