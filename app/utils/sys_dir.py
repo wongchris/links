@@ -12,6 +12,6 @@ class SystemPath():
 
     PROJECT_DIR = os.path.dirname(APP_DIR)
 
-    SQL_DIR = os.path.join(APP_DIR, 'Usage\SQL')
-    MAP_DIR = os.path.join(APP_DIR, 'Usage\Mapping')
-    TOOL_DIR = os.path.join(APP_DIR, 'Usage\Tools')
+    SQL_DIR = os.path.join(APP_DIR, 'usage\SQL')
+    MAP_DIR = os.path.join(APP_DIR, 'usage\Mapping')
+    TOOL_DIR = os.path.join(APP_DIR, 'usage\Tools')

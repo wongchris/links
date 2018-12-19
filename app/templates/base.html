@@ -29,46 +29,47 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('main.index') }}">Home</a></li>
                     {% if current_user.department in ["admin"] %}
                     <li>
-                        <a href="{{ url_for('admin') }}" class="dropdown-toggle" data-toggle="dropdown"
+                        <a href="{{ url_for('admin.admin') }}" class="dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true"
                         aria-expanded="false">Admin<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('user_management') }}">User Management</a></li>
-                            <li><a href="{{ url_for('db_management') }}">DB Management</a></li>
+                            <li><a href="{{ url_for('admin.user_management') }}">User Management</a></li>
+                            <li><a href="{{ url_for('admin.db_management') }}">DB Management</a></li>
+                            <li><a href="{{ url_for('admin.test_form') }}">Test Form</a></li>
                         </ul>
                     </li>
                     {% endif %}
                     {% if current_user.department in ["admin","app"] %}
                     <li>
-                        <a href="{{ url_for('app_team') }}" class="dropdown-toggle" data-toggle="dropdown"
+                        <a href="{{ url_for('app_team.app_team') }}" class="dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true"
                         aria-expanded="false">App<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('batch_send_email') }}">Batch Send Email</a></li>
+                            <li><a href="{{ url_for('app_team.batch_send_email') }}">Batch Send Email</a></li>
                         </ul>
                     </li>
                     {% endif %}
                     {% if current_user.department in ["admin","operations"] %}
                     <li>
-                        <a href="{{ url_for('operations') }}" class="dropdown-toggle" data-toggle="dropdown"
+                        <a href="{{ url_for('operations.operations') }}" class="dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true"
                         aria-expanded="false">Operations<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="fx_enhancement">FX Enhancement</a></li>
+                            <li><a href="{{ url_for('operations.fx_enhancement') }}">FX Enhancement</a></li>
                         </ul>
                     </li>
                     {% endif %}
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('main.about') }}">About</a></li>
                     {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('main.login') }}">Login</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
                     {% endif %}
                 </ul>
             </div>

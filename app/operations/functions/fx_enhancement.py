@@ -1,7 +1,7 @@
 from app.models import Database
 import pyodbc
 import os
-from app.Utils.sys_dir import SystemPath
+from app.utils.sys_dir import SystemPath
 import pandas as pd
 import json
 import datetime
@@ -136,14 +136,15 @@ class FxEnhancement():
         for acct in accts:
             dfAcct = dfFianlWithoutSPSA.loc[dfFianlWithoutSPSA['account_no'] == acct]
             dfAcct = dfAcct.sort_values('ccy', ascending=False)
+
+            # loop all the negative records - other ccy first - only USD and CNY
             for index, row in dfAcct.iterrows():
-                # loop all the negative records - other ccy first
-                if dfAcct.at[index, 'ccy'] != "HKD" and dfAcct.at[index, 'avail_bal'] < 0:
+                if dfAcct.at[index, 'ccy'] != "HKD" and dfAcct.at[index, 'ccy'] in ['CNY', 'USD'] and dfAcct.at[index, 'avail_bal'] < 0:
                     # use HKD to fully cover negative records and update
                     for index_hkd, row_hkd in dfAcct.iterrows():
                         if dfAcct.at[index_hkd, 'ccy'] == "HKD" and dfAcct.at[index_hkd, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
-                            dfCCY = dfFxRate.loc[(dfFxRate['fm_ccy'] == dfAcct.at[index_hkd, 'ccy']) & (
-                                        dfFxRate['to_ccy'] == row['ccy'])].reset_index()
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_hkd, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
                             if not dfCCY.empty:
                                 fx_rate = dfCCY['last_rate'][0]
                                 neg_ccy_avail_hkd = fx_rate * dfAcct.at[index, 'avail_bal']
@@ -159,8 +160,8 @@ class FxEnhancement():
                     for index_hkd_2, row_hkd_2 in dfAcct.iterrows():
                         if dfAcct.at[index_hkd_2, 'ccy'] == "HKD" and dfAcct.at[index_hkd_2, 'avail_bal'] > 0 and \
                                 dfAcct.at[index, 'avail_bal'] < 0:
-                            dfCCY = dfFxRate.loc[(dfFxRate['fm_ccy'] == dfAcct.at[index_hkd_2, 'ccy']) & (
-                                        dfFxRate['to_ccy'] == row['ccy'])].reset_index()
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_hkd_2, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
                             if not dfCCY.empty:
                                 fx_rate = dfCCY['last_rate'][0]
                                 neg_ccy_avalid_hkd_2 = fx_rate * dfAcct.at[index, 'avail_bal']
@@ -170,12 +171,12 @@ class FxEnhancement():
                                     dfAcct.at[index, 'avail_bal'] = dfAcct.at[index, 'avail_bal'] + dfAcct.at[index_hkd_2, 'avail_bal'] / fx_rate
                                     dfAcct.at[index_hkd_2, 'avail_bal'] = 0
 
-                    # use other ccy to fully cover negative records and update
+                    # use other ccy(only USD and CNY) to fully cover negative records and update
                     for index_other_ccy, row_other_ccy in dfAcct.iterrows():
-                        if dfAcct.at[index_other_ccy, 'ccy'] != "HKD" and dfAcct.at[
+                        if dfAcct.at[index_other_ccy, 'ccy'] != "HKD" and dfAcct.at[index, 'ccy'] in ['CNY', 'USD'] and dfAcct.at[
                             index_other_ccy, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
-                            dfCCY = dfFxRate.loc[(dfFxRate['fm_ccy'] == dfAcct.at[index_other_ccy, 'ccy']) & (
-                                        dfFxRate['to_ccy'] == row['ccy'])].reset_index()
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_other_ccy, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
                             if not dfCCY.empty:
                                 fx_rate = dfCCY['last_rate'][0]
                                 neg_ccy_avalid_other_ccy = fx_rate * dfAcct.at[index, 'avail_bal']
@@ -187,12 +188,12 @@ class FxEnhancement():
                                     dfAcct.at[index_other_ccy, 'avail_bal'] = dfAcct.at[index_other_ccy, 'avail_bal'] + neg_ccy_avalid_other_ccy
                                     dfAcct.at[index, 'avail_bal'] = 0
 
-                    # use other ccy to partly cover negative records and update
+                    # use other ccy(only USD and CNY) to partly cover negative records and update
                     for index_other_ccy_2, row_other_ccy_2 in dfAcct.iterrows():
-                        if dfAcct.at[index_other_ccy_2, 'ccy'] != "HKD" and dfAcct.at[
+                        if dfAcct.at[index_other_ccy_2, 'ccy'] != "HKD" and dfAcct.at[index, 'ccy'] in ['CNY', 'USD'] and dfAcct.at[
                             index_other_ccy_2, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
-                            dfCCY = dfFxRate.loc[(dfFxRate['fm_ccy'] == dfAcct.at[index_other_ccy_2, 'ccy']) & (
-                                        dfFxRate['to_ccy'] == row['ccy'])].reset_index()
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_other_ccy_2, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
                             if not dfCCY.empty:
                                 fx_rate = dfCCY['last_rate'][0]
                                 neg_ccy_avalid_other_ccy_2 = fx_rate * dfAcct.at[index, 'avail_bal']
@@ -209,8 +210,94 @@ class FxEnhancement():
                     # use HKD to partly cover all records(include negative HKD record)
                     for index_hkd_3, row_hkd_3 in dfAcct.iterrows():
                         if dfAcct.at[index_hkd_3, 'ccy'] == "HKD" and dfAcct.at[index, 'avail_bal'] < 0:
-                            dfCCY = dfFxRate.loc[(dfFxRate['fm_ccy'] == dfAcct.at[index_hkd_3, 'ccy']) & (
-                                        dfFxRate['to_ccy'] == row['ccy'])].reset_index()
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_hkd_3, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
+                            if not dfCCY.empty:
+                                fx_rate = dfCCY['last_rate'][0]
+                                neg_ccy_avalid_hkd_3 = fx_rate * dfAcct.at[index, 'avail_bal']
+                                dfCashIO = dfCashIO.append(gen_cash_IO(dfAcct.at[index_hkd_3, 'ccy'], row['ccy']
+                                                                       , neg_ccy_avalid_hkd_3,
+                                                                       abs(dfAcct.at[index, 'avail_bal']), fx_rate),
+                                                           ignore_index=True)
+                                dfAcct.at[index_hkd_3, 'avail_bal'] = dfAcct.at[index_hkd_3, 'avail_bal'] + neg_ccy_avalid_hkd_3
+                                dfAcct.at[index, 'avail_bal'] = 0
+                                # Gen Cash In Out Record
+
+            # loop all the negative records - other ccy not include ("HKD","CNY","USD")
+            for index, row in dfAcct.iterrows():
+                if dfAcct.at[index, 'ccy'] != "HKD" and dfAcct.at[index, 'ccy'] not in ['CNY', 'USD'] and dfAcct.at[index, 'avail_bal'] < 0:
+                    # use HKD to fully cover negative records and update
+                    for index_hkd, row_hkd in dfAcct.iterrows():
+                        if dfAcct.at[index_hkd, 'ccy'] == "HKD" and dfAcct.at[index_hkd, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_hkd, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
+                            if not dfCCY.empty:
+                                fx_rate = dfCCY['last_rate'][0]
+                                neg_ccy_avail_hkd = fx_rate * dfAcct.at[index, 'avail_bal']
+                                if dfAcct.at[index_hkd, 'avail_bal'] >= abs(neg_ccy_avail_hkd):
+                                    dfCashIO = dfCashIO.append(gen_cash_IO(dfAcct.at[index_hkd, 'ccy'], row['ccy']
+                                                                           , neg_ccy_avail_hkd,
+                                                                           abs(dfAcct.at[index, 'avail_bal']), fx_rate),
+                                                               ignore_index=True)
+                                    dfAcct.at[index_hkd, 'avail_bal'] = dfAcct.at[index_hkd, 'avail_bal'] + neg_ccy_avail_hkd
+                                    dfAcct.at[index, 'avail_bal'] = 0
+
+                    # use HKD to partly cover negative records and update
+                    for index_hkd_2, row_hkd_2 in dfAcct.iterrows():
+                        if dfAcct.at[index_hkd_2, 'ccy'] == "HKD" and dfAcct.at[index_hkd_2, 'avail_bal'] > 0 and \
+                                dfAcct.at[index, 'avail_bal'] < 0:
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_hkd_2, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
+                            if not dfCCY.empty:
+                                fx_rate = dfCCY['last_rate'][0]
+                                neg_ccy_avalid_hkd_2 = fx_rate * dfAcct.at[index, 'avail_bal']
+                                if dfAcct.at[index_hkd_2, 'avail_bal'] < abs(neg_ccy_avalid_hkd_2):
+                                    dfCashIO = dfCashIO.append(gen_cash_IO(dfAcct.at[index_hkd_2, 'ccy'], row['ccy']
+                                                                           , dfAcct.at[index_hkd_2, 'avail_bal'] * -1, abs(dfAcct.at[index_hkd_2, 'avail_bal'] / fx_rate), fx_rate), ignore_index=True)
+                                    dfAcct.at[index, 'avail_bal'] = dfAcct.at[index, 'avail_bal'] + dfAcct.at[index_hkd_2, 'avail_bal'] / fx_rate
+                                    dfAcct.at[index_hkd_2, 'avail_bal'] = 0
+
+                    # use other ccy(only USD and CNY) to fully cover negative records and update
+                    for index_other_ccy, row_other_ccy in dfAcct.iterrows():
+                        if dfAcct.at[index_other_ccy, 'ccy'] != "HKD" and dfAcct.at[index, 'ccy'] in ['CNY', 'USD'] and dfAcct.at[
+                            index_other_ccy, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_other_ccy, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
+                            if not dfCCY.empty:
+                                fx_rate = dfCCY['last_rate'][0]
+                                neg_ccy_avalid_other_ccy = fx_rate * dfAcct.at[index, 'avail_bal']
+                                if dfAcct.at[index_other_ccy, 'avail_bal'] >= abs(neg_ccy_avalid_other_ccy):
+                                    dfCashIO = dfCashIO.append(gen_cash_IO(dfAcct.at[index_other_ccy, 'ccy'], row['ccy']
+                                                                           , neg_ccy_avalid_other_ccy,
+                                                                           abs(dfAcct.at[index, 'avail_bal']), fx_rate),
+                                                               ignore_index=True)
+                                    dfAcct.at[index_other_ccy, 'avail_bal'] = dfAcct.at[index_other_ccy, 'avail_bal'] + neg_ccy_avalid_other_ccy
+                                    dfAcct.at[index, 'avail_bal'] = 0
+
+                    # use other ccy(only USD and CNY) to partly cover negative records and update
+                    for index_other_ccy_2, row_other_ccy_2 in dfAcct.iterrows():
+                        if dfAcct.at[index_other_ccy_2, 'ccy'] != "HKD" and dfAcct.at[index, 'ccy'] in ['CNY', 'USD'] and dfAcct.at[
+                            index_other_ccy_2, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_other_ccy_2, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
+                            if not dfCCY.empty:
+                                fx_rate = dfCCY['last_rate'][0]
+                                neg_ccy_avalid_other_ccy_2 = fx_rate * dfAcct.at[index, 'avail_bal']
+                                if dfAcct.at[index_other_ccy, 'avail_bal'] < abs(neg_ccy_avalid_other_ccy_2):
+                                    dfCashIO = dfCashIO.append(
+                                        gen_cash_IO(dfAcct.at[index_other_ccy_2, 'ccy'], row['ccy']
+                                                    , dfAcct.at[index_other_ccy_2, 'avail_bal'] * -1,
+                                                    abs(dfAcct.at[index_other_ccy_2, 'avail_bal'] / fx_rate), fx_rate),
+                                        ignore_index=True)
+                                    dfAcct.at[index, 'avail_bal'] = dfAcct.at[index, 'avail_bal'] + dfAcct.at[
+                                        index_other_ccy_2, 'avail_bal'] / fx_rate
+                                    dfAcct.at[index_other_ccy_2, 'avail_bal'] = 0
+
+                    # use HKD to partly cover all records(include negative HKD record)
+                    for index_hkd_3, row_hkd_3 in dfAcct.iterrows():
+                        if dfAcct.at[index_hkd_3, 'ccy'] == "HKD" and dfAcct.at[index, 'avail_bal'] < 0:
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_hkd_3, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == row['ccy'])].reset_index()
                             if not dfCCY.empty:
                                 fx_rate = dfCCY['last_rate'][0]
                                 neg_ccy_avalid_hkd_3 = fx_rate * dfAcct.at[index, 'avail_bal']
@@ -226,9 +313,10 @@ class FxEnhancement():
                 # use Other ccy to cover HKD records
                 if dfAcct.at[index, 'ccy'] == "HKD" and dfAcct.at[index, 'avail_bal'] < 0:
                     for index_other_ccy, row_other_ccy in dfAcct.iterrows():
-                        if dfAcct.at[index_other_ccy, 'ccy'] != "HKD" and dfAcct.at[index_other_ccy, 'avail_bal'] > 0:
-                            dfCCY = dfFxRate.loc[(dfFxRate['fm_ccy'] == dfAcct.at[index_other_ccy, 'ccy']) & (
-                                        dfFxRate['to_ccy'] == dfAcct.at[index, 'ccy'])].reset_index()
+                        if dfAcct.at[index_other_ccy, 'ccy'] != "HKD" and dfAcct.at[index_other_ccy, 'ccy'] in ['CNY', 'USD'] \
+                                and dfAcct.at[index_other_ccy, 'avail_bal'] > 0 and dfAcct.at[index, 'avail_bal'] < 0:
+                            dfCCY = dfFxRate.loc[(dfFxRate['to_ccy'] == dfAcct.at[index_other_ccy, 'ccy']) & (
+                                        dfFxRate['fm_ccy'] == dfAcct.at[index, 'ccy'])].reset_index()
                             if not dfCCY.empty:
                                 fx_rate = dfCCY['last_rate'][0]
                                 neg_hkd_avail_other_ccy = fx_rate * dfAcct.at[index, 'avail_bal']

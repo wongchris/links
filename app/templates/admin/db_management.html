@@ -43,7 +43,7 @@
         </tbody>
     </table>
     <div class="row">
-        <div class="col-sm-8"><a href="{{ url_for('register_db') }}">
+        <div class="col-sm-8"><a href="{{ url_for('admin.register_db') }}">
             <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>New Database ? Click here to Register</button>
         </a></div>
     </div>
@@ -72,7 +72,7 @@
     <script>
         function Edit(elm) {
             $.ajax({
-                url: '{{ url_for('test_db') }}',
+                url: '{{ url_for('admin.test_db') }}',
                 data: {
                     dbid: $(elm).attr('data-id')
                 },
@@ -91,7 +91,7 @@
 
         function Delete(elm) {
             $.ajax({
-                url: '{{ url_for('delete_db') }}',
+                url: '{{ url_for('admin.delete_db') }}',
                 data: {
                     dbid: $(elm).attr('data-id')
                 },

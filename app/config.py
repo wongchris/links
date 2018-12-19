@@ -15,8 +15,10 @@ class Config(object):
     MAIL_PASSWORD = "SEN123asd"
     ADMINS = ['chris.wong@xyzq.com.hk']
 
+    BOOTSTRAP_SERVE_LOCAL = True
+
 
     #System
 
 
-    #Admin
+    #admin
