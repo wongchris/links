@@ -18,7 +18,10 @@ class Config(object):
     #flask_bootstrap usage
     BOOTSTRAP_SERVE_LOCAL = True
 
+    UPLOADED_UPLOADS_DEST = os.getcwd() + "/uploads"
+    UPLOADED_UPLOADS_THUMBNAILS_DEST = os.getcwd() + "/uploads/thumbnails"
+
     #flask_uploads usage
-    UPLOADED_FILES_DEST = ''
+    #UPLOADED_FILES_DEST = ''
     #UPLOADS_DEFAULT_DEST = ''
     #UPLOADED_PHOTOS_DEST  = ''

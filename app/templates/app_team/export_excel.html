@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block app_content %}
+    <h1>Export Excel</h1>
+    {{ wtf.quick_form(form) }}
+    {% for file in files_list %}
+        - {{ file }}
+        <a href="{{ url_for('admin.open_file', filename=file) }}">open</a>
+        <a href="{{ url_for('admin.delete_file', filename=file) }}">del</a><br>
+    {% endfor %}
+
+
+<script charset="utf-8" type="text/javascript">
+    let dropdown_list = document.getElementById('select_files');
+    var file_val = ''
+    dropdown_list.onchange = function() {
+        $.ajax({
+            url: '{{ url_for('app_team.export_excel') }}',
+            data: {
+                file_val: dropdown_list.value
+            },
+            type: 'POST',
+            success: function(res) {
+                console.log(res);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+
+    }
+</script>
+
+{% endblock %}

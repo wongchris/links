@@ -75,9 +75,12 @@ Visual Studio Installer   UserMixin -
 12. Flask-Mail  -   pip install flask-mail(email extension)
                 -   pip install pyjwt(json web tokens)
 13. xlsxwriter  -   pip install xlsxwriter
-                    (pip download -r temprequirement -d "D:/PyCharm3/Links/packages/second")
+                    (pip download -r temprequirement -d "D:/PyCharm3/Links/packages/third")
 14. requests-toolbelt - pip install requests-toolbelt
-
+-----------------------------------------------------------------------------------
+15. pip install Flask-Uploads
+    (pip download -r temprequirement -d "D:/PyCharm3/Links/packages/third")
+16. pip install simplejson
 
 
 

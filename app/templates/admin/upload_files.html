@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}File Uploader{% endblock %}
+
+{% block app_content %}
+    {% if current_user.username %}
+        <h1>File Browser</h1>
+        <a href="{{ url_for('admin.upload_files') }}">Upload</a> /
+        <a href="{{ url_for('admin.manage_files') }}">Manage</a>
+        <hr>
+        <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+            {{ form.uploads(multiple="multiple")}}
+            {% for error in form.uploads.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            {{ form.submit }}
+        </form>
+
+        {% if success %}
+            <br>
+            <p>Upload Success!</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

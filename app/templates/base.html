@@ -4,10 +4,26 @@
     {% if title %}{{ title }} - Links{% else %}Welcome to Links{% endif %}
 {% endblock %}
 
-{% block styles %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+
+<!-- Generic page styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='file_upload/css/style.css') }}">
+
+<!-- blueimp Gallery styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='file_upload/css/blueimp-gallery.min.css') }}">
+
+<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+<link rel="stylesheet" href="{{ url_for('static', filename='file_upload/css/jquery.fileupload.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='file_upload/css/jquery.fileupload-ui.css') }}">
+
+
 {% endblock %}
+
+
 
 {% block scripts %}
     <script src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}" ></script>
@@ -38,8 +54,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ url_for('admin.user_management') }}">User Management</a></li>
                             <li><a href="{{ url_for('admin.db_management') }}">DB Management</a></li>
-                            <li><a href="{{ url_for('admin.test_form') }}">Test Form</a></li>
-                            <li><a href="{{ url_for('admin.test_form') }}">Upload File</a></li>
+                            <li><a href="{{ url_for('admin.file_uploader') }}">File Uploader</a></li>
+
                         </ul>
                     </li>
                     {% endif %}
@@ -50,6 +66,7 @@
                         aria-expanded="false">App<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ url_for('app_team.batch_send_email') }}">Batch Send Email</a></li>
+                            <li><a href="{{ url_for('app_team.export_excel') }}">Export Excel</a></li>
                         </ul>
                     </li>
                     {% endif %}

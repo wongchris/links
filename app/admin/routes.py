@@ -1,6 +1,6 @@
-from app import db
+from app import db, uploads
 from app.models import User, Database
-from app.admin.forms import DBRegistrationForm, RegistrationForm, TestForm
+from app.admin.forms import DBRegistrationForm, RegistrationForm, TestForm, UploadForm
 from flask import render_template, flash, redirect, url_for, request,send_file, Response
 from flask_login import current_user, login_required
 import pyodbc
@@ -8,7 +8,14 @@ import json
 import pandas as pd
 from io import BytesIO
 from app.admin import bp
-
+import os
+from flask import current_app, send_from_directory
+import time
+import hashlib
+from app.admin.functions.uploadfile import Uploadfile
+import simplejson
+from werkzeug.datastructures import FileStorage
+from werkzeug.utils import secure_filename
 
 @bp.route('/admin')
 def admin():
@@ -16,6 +23,7 @@ def admin():
         return redirect(url_for('main.index'))
     return render_template("admin/admin.html", title='admin Page')
 
+# region db management
 @bp.route('/db_management', methods=['GET', 'POST'])
 def db_management():
     if current_user.is_anonymous:
@@ -85,7 +93,9 @@ def test_db():
         return json.dumps(result)
     except Exception as e:
         return render_template('errors/error.html', error=str(e))
+# endregion
 
+# region ser management
 @bp.route('/user_management', methods=['GET', 'POST'])
 def user_management():
     if current_user.is_anonymous:
@@ -166,43 +176,105 @@ def edit_user_update():
         user.set_password(password)
     db.session.commit()
     return redirect(url_for('admin.user_management'))
+# endregion
 
-
-@bp.route('/test_form', methods=['GET', 'POST'])
+# region file_uploader
+@bp.route('/file_uploader', methods=['GET', 'POST'])
 @login_required
-def test_form():
+def file_uploader():
     if current_user.is_anonymous or current_user.department not in ['admin']:
         return redirect(url_for('main.index'))
     form = TestForm()
-    print(form.fx_file.data)
+    #print(form.fx_file.data)
     if form.validate_on_submit():
-        if not form.fx_file.data:
-            flash(message="No FX Rate File Imported!", category='error')
-            return redirect(url_for('admin.test_form'))
-            # create a random Pandas dataframe
+        pass
+    return render_template("admin/file_uploader.html", title='File Uploader', form=form)
 
-        df_1 = pd.read_excel(form.fx_file.data)
+@bp.route("/upload", methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        #files = request.files['file']
+        files = request.files.getlist('file')
+        if files:
+            for file in files:
+                abs_file_path = uploads.path(secure_filename(file.filename))
+                if not os.path.exists(abs_file_path):
+                    uploads.save(file)
+                    size = os.path.getsize(abs_file_path)
+                    result = Uploadfile(name=secure_filename(file.filename), type=file.content_type, size=size)
+                else:
+                    result = Uploadfile(name=secure_filename(file.filename), type=file.content_type, size=0, not_allowed_msg="File already exists!")
+        return simplejson.dumps({"files": [result.get_file()]})
+    if request.method == 'GET':
+        files = [f for f in os.listdir(current_app.config['UPLOADED_UPLOADS_DEST']) if
+                 os.path.isfile(os.path.join(current_app.config['UPLOADED_UPLOADS_DEST'], f))]
+        file_display = []
+        for f in files:
+            size = os.path.getsize(os.path.join(current_app.config['UPLOADED_UPLOADS_DEST'], f))
+            file_saved = Uploadfile(name=f, size=size)
+            file_display.append(file_saved.get_file())
+        return simplejson.dumps({"files": file_display})
+    return render_template("admin/file_uploader.html", title='File Uploader')
 
-        # create an output stream
-        output = BytesIO()
-        writer = pd.ExcelWriter(output, engine='xlsxwriter')
+@bp.route("/uploads/<string:filename>", methods=['GET'])
+def get_file(filename):
+    return send_from_directory(os.path.join(current_app.config['UPLOADED_UPLOADS_DEST']), filename=filename)
 
-        # taken from the original question
-        df_1.to_excel(writer, startrow=0, merge_cells=False, sheet_name="Sheet_1")
-        #workbook = writer.book
-        #worksheet = writer.sheets["Sheet_1"]
-        #format = workbook.add_format()
-        #format.set_bg_color('#eeeeee')
-        #worksheet.set_column(0, 9, 28)
+@bp.route("/delete/<string:filename>", methods=['DELETE'])
+def delete(filename):
+    file_path = os.path.join(current_app.config['UPLOADED_UPLOADS_DEST'], filename)
 
-        # the writer has done its job
-        writer.close()
+    if os.path.exists(file_path):
+        try:
+            os.remove(file_path)
+            return simplejson.dumps({filename: 'True'})
+        except:
+            return simplejson.dumps({filename: 'False'})
 
-        # go back to the beginning of the stream
-        output.seek(0)
-        #send_file(output, attachment_filename="testing.xlsx", as_attachment=True)
-        # finally return the file
-        return send_file(output, attachment_filename="测试表格.xlsx", as_attachment=True, mimetype='	application/vnd.ms-excel')
-        #return render_template("admin/test_form.html", title='test form', form=form)
+# endregion
 
-    return render_template("admin/test_form.html", title='test form', form=form)
+# region upload_files
+@bp.route('/upload_files', methods=['GET', 'POST'])
+@login_required
+def upload_files():
+    if current_user.is_anonymous or current_user.department not in ['admin']:
+        return redirect(url_for('main.index'))
+    form = UploadForm()
+    if form.validate_on_submit():
+        for filename in request.files.getlist('uploads'):
+            print(filename)
+            uploads.save(filename)
+        success = True
+    else:
+        success = False
+    return render_template('admin/upload_files.html', form=form, success=success)
+
+@bp.route('/manage_files', methods=['GET', 'POST'])
+@login_required
+def manage_files():
+    if current_user.is_anonymous or current_user.department not in ['admin']:
+        return redirect(url_for('main.index'))
+    files_list = os.listdir(current_app.config['UPLOADED_UPLOADS_DEST'])
+    return render_template('admin/manage_files.html', files_list=files_list)
+
+
+@bp.route('/open/<filename>')
+@login_required
+def open_file(filename):
+    if current_user.is_anonymous or current_user.department not in ['admin']:
+        return redirect(url_for('main.index'))
+    file_url = uploads.url(filename)
+    return render_template('admin/browser_file.html', file_url=file_url)
+
+
+@bp.route('/delete/<filename>')
+@login_required
+def delete_file(filename):
+    if current_user.is_anonymous or current_user.department not in ['admin']:
+        return redirect(url_for('main.index'))
+    #uploads.path -- absolute path
+    file_path = uploads.path(filename)
+    os.remove(file_path)
+    return redirect(url_for('admin.manage_files'))
+
+# endregion

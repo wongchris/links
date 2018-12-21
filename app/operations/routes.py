@@ -18,7 +18,7 @@ def fx_enhancement():
     if current_user.is_anonymous or current_user.department not in ['admin','operations']:
         return redirect(url_for('main.index'))
     form = FxEnhancementForm()
-    print(form.fx_file.data)
+    #print(form.fx_file.data)
     if form.validate_on_submit():
         if form.open_folder.data:
             p = subprocess.Popen([os.path.join(SystemPath.TOOL_DIR, "open_folder.bat"), form.export_path.data],

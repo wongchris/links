@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    {% if current_user.username %}
+        <h1>File Browser</h1>
+        <a href="{{ url_for('admin.upload_files') }}">Upload</a> /
+        <a href="{{ url_for('admin.manage_files') }}">Manage</a>
+        <hr>
+        <p>URL: {{ file_url }}</p>
+    {% endif %}
+{% endblock %}

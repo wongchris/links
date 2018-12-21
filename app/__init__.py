@@ -8,6 +8,7 @@ from logging.handlers import RotatingFileHandler, SMTPHandler
 import os
 from flask_bootstrap import Bootstrap
 from flask_mail import Mail
+from flask_uploads import UploadSet, configure_uploads, patch_request_class, ALL
 
 
 
@@ -18,6 +19,7 @@ migrate = Migrate()
 login = LoginManager()
 bootstrap = Bootstrap()
 mail = Mail()
+uploads = UploadSet('uploads', ALL)
 
 
 def create_app(config_class=Config):
@@ -28,6 +30,8 @@ def create_app(config_class=Config):
     login.init_app(app)
     bootstrap.init_app(app)
     mail.init_app(app)
+    configure_uploads(app, uploads)
+    patch_request_class(app)
 
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
@@ -43,6 +47,9 @@ def create_app(config_class=Config):
 
     from app.operations import bp as operations_bp
     app.register_blueprint(operations_bp, url_prefix='/operations')
+
+
+
 
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:

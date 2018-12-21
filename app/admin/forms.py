@@ -38,3 +38,6 @@ class TestForm(FlaskForm):
                         validators=[FileAllowed(["xls", "xlsx"], 'Excel File only!')])
     submit = SubmitField('Submit')
 
+class UploadForm(FlaskForm):
+    uploads = FileField('Please choose files to upload!')
+    submit = SubmitField(u'Upload')
