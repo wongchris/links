@@ -55,7 +55,7 @@ pefile==2018.8.8
 protobuf==3.6.1
 pycparser==2.19
 PyInstaller==3.4
-PyJWT==1.7.0
+PyJWT==2.4.0
 pyodbc==4.0.24
 pypiwin32==223
 python-dateutil==2.7.4
